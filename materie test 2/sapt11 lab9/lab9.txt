@@ -1,0 +1,1422 @@
+>> A=[1 3;2 2];
+>> [lambda,u]=powerit(A,[-5;5],10)
+
+lambda =
+
+    4.0000
+
+
+u =
+
+    0.7071
+    0.7071
+
+>> A=[1 3;2 2];
+>> [lambda,u]=invpowerit(A,[-5;5],-2,10)
+
+lambda =
+
+   -1.0000
+
+
+u =
+
+   -0.8321
+    0.5547
+
+>> [lambda,u]=rqi(A,[-5;5],1)
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =  1.665335e-16. 
+> In rqi (line 5) 
+
+lambda =
+
+   -1.0000
+
+
+u =
+
+    0.8321
+   -0.5547
+
+>> lambda=nsi(A,10)
+
+lambda =
+
+    4.0000
+   -1.0000
+
+>> lambda=unshiftedqr(A,10)
+
+lambda =
+
+    4.0000
+   -1.0000
+
+>> lambda=shiftedqr(A)
+
+lambda =
+
+   -1.0000
+    4.0000
+
+>> [U,S,V]=svd(A)
+
+U =
+
+   -0.7497   -0.6618
+   -0.6618    0.7497
+
+
+S =
+
+    4.1306         0
+         0    0.9684
+
+
+V =
+
+   -0.5019    0.8649
+   -0.8649   -0.5019
+
+>> A1=[10 -12 -6;5 -5 -4;-1 0 3];
+>> powerit(A,[1 1 1],10)
+Error using  * 
+Inner matrix dimensions must agree.
+
+Error in powerit (line 4)
+x=A*u;
+ 
+>> [V,D] = eig(A)
+
+V =
+
+   -0.8321   -0.7071
+    0.5547   -0.7071
+
+
+D =
+
+    -1     0
+     0     4
+
+>> powerit(A1,[1 1 1],10)
+Error using  * 
+Inner matrix dimensions must agree.
+
+Error in powerit (line 4)
+x=A*u;
+ 
+>> [V,D] = eig(A1)
+
+V =
+
+   -0.8165    0.5774    0.0000
+   -0.4082    0.5774    0.4472
+   -0.4082   -0.5774   -0.8944
+
+
+D =
+
+    1.0000         0         0
+         0    4.0000         0
+         0         0    3.0000
+
+>> [lambda,u] = powerit(A,[1 1 1],10)
+Error using  * 
+Inner matrix dimensions must agree.
+
+Error in powerit (line 4)
+x=A*u;
+ 
+>> [lambda,u] = powerit(A,[1; 1; 1],10)
+Error using  * 
+Inner matrix dimensions must agree.
+
+Error in powerit (line 4)
+x=A*u;
+ 
+>> [lambda,u] = powerit(A,[1; 1; 1;],10)
+Error using  * 
+Inner matrix dimensions must agree.
+
+Error in powerit (line 4)
+x=A*u;
+ 
+>> [lambda,u] = powerit(A1,[1; 1; 1],10)
+
+lambda =
+
+    4.0508
+
+
+u =
+
+   -0.5996
+   -0.5771
+    0.5545
+
+>> [lambda,u] = powerit(A1,[1; 1; 1],34)
+
+lambda =
+
+    4.0001
+
+
+u =
+
+   -0.5774
+   -0.5774
+    0.5773
+
+>> [lambda,u] = powerit(A1,[1; 1; 1],40)
+
+lambda =
+
+    4.0000
+
+
+u =
+
+   -0.5774
+   -0.5774
+    0.5773
+
+>> [lambda,u] = invpowerit(A1,[-5; 5; 0],1.95,10)
+
+lambda =
+
+   -0.3414
+
+
+u =
+
+    0.7756
+    0.6253
+   -0.0870
+
+>> [lambda,u] = invpowerit(A1,[-5; 5; 0],1.95,100)
+
+lambda =
+
+    1.0000
+
+
+u =
+
+    0.8165
+    0.4083
+    0.4082
+
+>> [lambda,u] = invpowerit(A1,[-5; 5; 0],2.05,100)
+
+lambda =
+
+    3.0000
+
+
+u =
+
+    0.0000
+    0.4472
+   -0.8944
+
+>> [lambda,u] = rqi(A1,[-5; 5; 0],100)
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =  1.057355e-17. 
+> In rqi (line 5) 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =  1.057355e-17. 
+> In rqi (line 5) 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =  2.114711e-17. 
+> In rqi (line 5) 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =  2.995840e-17. 
+> In rqi (line 5) 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =  1.057355e-17. 
+> In rqi (line 5) 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =  1.057355e-17. 
+> In rqi (line 5) 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =  3.524518e-17. 
+> In rqi (line 5) 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =  2.114711e-17. 
+> In rqi (line 5) 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =  2.114711e-17. 
+> In rqi (line 5) 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =  2.114711e-17. 
+> In rqi (line 5) 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =  1.057355e-17. 
+> In rqi (line 5) 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =  1.057355e-17. 
+> In rqi (line 5) 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =  2.114711e-17. 
+> In rqi (line 5) 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =  1.233581e-17. 
+> In rqi (line 5) 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =  2.995840e-17. 
+> In rqi (line 5) 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =  3.524518e-17. 
+> In rqi (line 5) 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =  2.114711e-17. 
+> In rqi (line 5) 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =  2.114711e-17. 
+> In rqi (line 5) 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =  2.114711e-17. 
+> In rqi (line 5) 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =  1.057355e-17. 
+> In rqi (line 5) 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =  1.057355e-17. 
+> In rqi (line 5) 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =  2.114711e-17. 
+> In rqi (line 5) 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =  1.233581e-17. 
+> In rqi (line 5) 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =  2.995840e-17. 
+> In rqi (line 5) 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =  3.524518e-17. 
+> In rqi (line 5) 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =  2.114711e-17. 
+> In rqi (line 5) 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =  2.114711e-17. 
+> In rqi (line 5) 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =  2.114711e-17. 
+> In rqi (line 5) 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =  1.057355e-17. 
+> In rqi (line 5) 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =  1.057355e-17. 
+> In rqi (line 5) 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =  2.114711e-17. 
+> In rqi (line 5) 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =  1.233581e-17. 
+> In rqi (line 5) 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =  2.995840e-17. 
+> In rqi (line 5) 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =  3.524518e-17. 
+> In rqi (line 5) 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =  2.114711e-17. 
+> In rqi (line 5) 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =  2.114711e-17. 
+> In rqi (line 5) 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =  2.114711e-17. 
+> In rqi (line 5) 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =  1.057355e-17. 
+> In rqi (line 5) 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =  1.057355e-17. 
+> In rqi (line 5) 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =  2.114711e-17. 
+> In rqi (line 5) 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =  1.233581e-17. 
+> In rqi (line 5) 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =  2.995840e-17. 
+> In rqi (line 5) 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =  3.524518e-17. 
+> In rqi (line 5) 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =  2.114711e-17. 
+> In rqi (line 5) 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =  2.114711e-17. 
+> In rqi (line 5) 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =  2.114711e-17. 
+> In rqi (line 5) 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =  1.057355e-17. 
+> In rqi (line 5) 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =  1.057355e-17. 
+> In rqi (line 5) 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =  2.114711e-17. 
+> In rqi (line 5) 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =  1.233581e-17. 
+> In rqi (line 5) 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =  2.995840e-17. 
+> In rqi (line 5) 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =  3.524518e-17. 
+> In rqi (line 5) 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =  2.114711e-17. 
+> In rqi (line 5) 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =  2.114711e-17. 
+> In rqi (line 5) 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =  2.114711e-17. 
+> In rqi (line 5) 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =  1.057355e-17. 
+> In rqi (line 5) 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =  1.057355e-17. 
+> In rqi (line 5) 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =  2.114711e-17. 
+> In rqi (line 5) 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =  1.233581e-17. 
+> In rqi (line 5) 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =  2.995840e-17. 
+> In rqi (line 5) 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =  3.524518e-17. 
+> In rqi (line 5) 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =  2.114711e-17. 
+> In rqi (line 5) 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =  2.114711e-17. 
+> In rqi (line 5) 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =  2.114711e-17. 
+> In rqi (line 5) 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =  1.057355e-17. 
+> In rqi (line 5) 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =  1.057355e-17. 
+> In rqi (line 5) 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =  2.114711e-17. 
+> In rqi (line 5) 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =  1.233581e-17. 
+> In rqi (line 5) 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =  2.995840e-17. 
+> In rqi (line 5) 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =  3.524518e-17. 
+> In rqi (line 5) 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =  2.114711e-17. 
+> In rqi (line 5) 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =  2.114711e-17. 
+> In rqi (line 5) 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =  2.114711e-17. 
+> In rqi (line 5) 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =  1.057355e-17. 
+> In rqi (line 5) 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =  1.057355e-17. 
+> In rqi (line 5) 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =  2.114711e-17. 
+> In rqi (line 5) 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =  1.233581e-17. 
+> In rqi (line 5) 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =  2.995840e-17. 
+> In rqi (line 5) 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =  3.524518e-17. 
+> In rqi (line 5) 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =  2.114711e-17. 
+> In rqi (line 5) 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =  2.114711e-17. 
+> In rqi (line 5) 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =  2.114711e-17. 
+> In rqi (line 5) 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =  1.057355e-17. 
+> In rqi (line 5) 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =  1.057355e-17. 
+> In rqi (line 5) 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =  2.114711e-17. 
+> In rqi (line 5) 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =  1.233581e-17. 
+> In rqi (line 5) 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =  2.995840e-17. 
+> In rqi (line 5) 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =  3.524518e-17. 
+> In rqi (line 5) 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =  2.114711e-17. 
+> In rqi (line 5) 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =  2.114711e-17. 
+> In rqi (line 5) 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =  2.114711e-17. 
+> In rqi (line 5) 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =  1.057355e-17. 
+> In rqi (line 5) 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =  1.057355e-17. 
+> In rqi (line 5) 
+
+lambda =
+
+    4.0000
+
+
+u =
+
+    0.5774
+    0.5774
+   -0.5774
+
+>> [lambda,u] = rqi(A1,[-5; 0; 0],100)
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =  1.057355e-17. 
+> In rqi (line 5) 
+Warning: Matrix is singular to working precision. 
+> In rqi (line 5) 
+Warning: Matrix is singular, close to singular or badly scaled. Results may be inaccurate. RCOND = NaN. 
+> In rqi (line 5) 
+Warning: Matrix is singular, close to singular or badly scaled. Results may be inaccurate. RCOND = NaN. 
+> In rqi (line 5) 
+Warning: Matrix is singular, close to singular or badly scaled. Results may be inaccurate. RCOND = NaN. 
+> In rqi (line 5) 
+Warning: Matrix is singular, close to singular or badly scaled. Results may be inaccurate. RCOND = NaN. 
+> In rqi (line 5) 
+Warning: Matrix is singular, close to singular or badly scaled. Results may be inaccurate. RCOND = NaN. 
+> In rqi (line 5) 
+Warning: Matrix is singular, close to singular or badly scaled. Results may be inaccurate. RCOND = NaN. 
+> In rqi (line 5) 
+Warning: Matrix is singular, close to singular or badly scaled. Results may be inaccurate. RCOND = NaN. 
+> In rqi (line 5) 
+Warning: Matrix is singular, close to singular or badly scaled. Results may be inaccurate. RCOND = NaN. 
+> In rqi (line 5) 
+Warning: Matrix is singular, close to singular or badly scaled. Results may be inaccurate. RCOND = NaN. 
+> In rqi (line 5) 
+Warning: Matrix is singular, close to singular or badly scaled. Results may be inaccurate. RCOND = NaN. 
+> In rqi (line 5) 
+Warning: Matrix is singular, close to singular or badly scaled. Results may be inaccurate. RCOND = NaN. 
+> In rqi (line 5) 
+Warning: Matrix is singular, close to singular or badly scaled. Results may be inaccurate. RCOND = NaN. 
+> In rqi (line 5) 
+Warning: Matrix is singular, close to singular or badly scaled. Results may be inaccurate. RCOND = NaN. 
+> In rqi (line 5) 
+Warning: Matrix is singular, close to singular or badly scaled. Results may be inaccurate. RCOND = NaN. 
+> In rqi (line 5) 
+Warning: Matrix is singular, close to singular or badly scaled. Results may be inaccurate. RCOND = NaN. 
+> In rqi (line 5) 
+Warning: Matrix is singular, close to singular or badly scaled. Results may be inaccurate. RCOND = NaN. 
+> In rqi (line 5) 
+Warning: Matrix is singular, close to singular or badly scaled. Results may be inaccurate. RCOND = NaN. 
+> In rqi (line 5) 
+Warning: Matrix is singular, close to singular or badly scaled. Results may be inaccurate. RCOND = NaN. 
+> In rqi (line 5) 
+Warning: Matrix is singular, close to singular or badly scaled. Results may be inaccurate. RCOND = NaN. 
+> In rqi (line 5) 
+Warning: Matrix is singular, close to singular or badly scaled. Results may be inaccurate. RCOND = NaN. 
+> In rqi (line 5) 
+Warning: Matrix is singular, close to singular or badly scaled. Results may be inaccurate. RCOND = NaN. 
+> In rqi (line 5) 
+Warning: Matrix is singular, close to singular or badly scaled. Results may be inaccurate. RCOND = NaN. 
+> In rqi (line 5) 
+Warning: Matrix is singular, close to singular or badly scaled. Results may be inaccurate. RCOND = NaN. 
+> In rqi (line 5) 
+Warning: Matrix is singular, close to singular or badly scaled. Results may be inaccurate. RCOND = NaN. 
+> In rqi (line 5) 
+Warning: Matrix is singular, close to singular or badly scaled. Results may be inaccurate. RCOND = NaN. 
+> In rqi (line 5) 
+Warning: Matrix is singular, close to singular or badly scaled. Results may be inaccurate. RCOND = NaN. 
+> In rqi (line 5) 
+Warning: Matrix is singular, close to singular or badly scaled. Results may be inaccurate. RCOND = NaN. 
+> In rqi (line 5) 
+Warning: Matrix is singular, close to singular or badly scaled. Results may be inaccurate. RCOND = NaN. 
+> In rqi (line 5) 
+Warning: Matrix is singular, close to singular or badly scaled. Results may be inaccurate. RCOND = NaN. 
+> In rqi (line 5) 
+Warning: Matrix is singular, close to singular or badly scaled. Results may be inaccurate. RCOND = NaN. 
+> In rqi (line 5) 
+Warning: Matrix is singular, close to singular or badly scaled. Results may be inaccurate. RCOND = NaN. 
+> In rqi (line 5) 
+Warning: Matrix is singular, close to singular or badly scaled. Results may be inaccurate. RCOND = NaN. 
+> In rqi (line 5) 
+Warning: Matrix is singular, close to singular or badly scaled. Results may be inaccurate. RCOND = NaN. 
+> In rqi (line 5) 
+Warning: Matrix is singular, close to singular or badly scaled. Results may be inaccurate. RCOND = NaN. 
+> In rqi (line 5) 
+Warning: Matrix is singular, close to singular or badly scaled. Results may be inaccurate. RCOND = NaN. 
+> In rqi (line 5) 
+Warning: Matrix is singular, close to singular or badly scaled. Results may be inaccurate. RCOND = NaN. 
+> In rqi (line 5) 
+Warning: Matrix is singular, close to singular or badly scaled. Results may be inaccurate. RCOND = NaN. 
+> In rqi (line 5) 
+Warning: Matrix is singular, close to singular or badly scaled. Results may be inaccurate. RCOND = NaN. 
+> In rqi (line 5) 
+Warning: Matrix is singular, close to singular or badly scaled. Results may be inaccurate. RCOND = NaN. 
+> In rqi (line 5) 
+Warning: Matrix is singular, close to singular or badly scaled. Results may be inaccurate. RCOND = NaN. 
+> In rqi (line 5) 
+Warning: Matrix is singular, close to singular or badly scaled. Results may be inaccurate. RCOND = NaN. 
+> In rqi (line 5) 
+Warning: Matrix is singular, close to singular or badly scaled. Results may be inaccurate. RCOND = NaN. 
+> In rqi (line 5) 
+Warning: Matrix is singular, close to singular or badly scaled. Results may be inaccurate. RCOND = NaN. 
+> In rqi (line 5) 
+Warning: Matrix is singular, close to singular or badly scaled. Results may be inaccurate. RCOND = NaN. 
+> In rqi (line 5) 
+Warning: Matrix is singular, close to singular or badly scaled. Results may be inaccurate. RCOND = NaN. 
+> In rqi (line 5) 
+Warning: Matrix is singular, close to singular or badly scaled. Results may be inaccurate. RCOND = NaN. 
+> In rqi (line 5) 
+Warning: Matrix is singular, close to singular or badly scaled. Results may be inaccurate. RCOND = NaN. 
+> In rqi (line 5) 
+Warning: Matrix is singular, close to singular or badly scaled. Results may be inaccurate. RCOND = NaN. 
+> In rqi (line 5) 
+Warning: Matrix is singular, close to singular or badly scaled. Results may be inaccurate. RCOND = NaN. 
+> In rqi (line 5) 
+Warning: Matrix is singular, close to singular or badly scaled. Results may be inaccurate. RCOND = NaN. 
+> In rqi (line 5) 
+Warning: Matrix is singular, close to singular or badly scaled. Results may be inaccurate. RCOND = NaN. 
+> In rqi (line 5) 
+Warning: Matrix is singular, close to singular or badly scaled. Results may be inaccurate. RCOND = NaN. 
+> In rqi (line 5) 
+Warning: Matrix is singular, close to singular or badly scaled. Results may be inaccurate. RCOND = NaN. 
+> In rqi (line 5) 
+Warning: Matrix is singular, close to singular or badly scaled. Results may be inaccurate. RCOND = NaN. 
+> In rqi (line 5) 
+Warning: Matrix is singular, close to singular or badly scaled. Results may be inaccurate. RCOND = NaN. 
+> In rqi (line 5) 
+Warning: Matrix is singular, close to singular or badly scaled. Results may be inaccurate. RCOND = NaN. 
+> In rqi (line 5) 
+Warning: Matrix is singular, close to singular or badly scaled. Results may be inaccurate. RCOND = NaN. 
+> In rqi (line 5) 
+Warning: Matrix is singular, close to singular or badly scaled. Results may be inaccurate. RCOND = NaN. 
+> In rqi (line 5) 
+Warning: Matrix is singular, close to singular or badly scaled. Results may be inaccurate. RCOND = NaN. 
+> In rqi (line 5) 
+Warning: Matrix is singular, close to singular or badly scaled. Results may be inaccurate. RCOND = NaN. 
+> In rqi (line 5) 
+Warning: Matrix is singular, close to singular or badly scaled. Results may be inaccurate. RCOND = NaN. 
+> In rqi (line 5) 
+Warning: Matrix is singular, close to singular or badly scaled. Results may be inaccurate. RCOND = NaN. 
+> In rqi (line 5) 
+Warning: Matrix is singular, close to singular or badly scaled. Results may be inaccurate. RCOND = NaN. 
+> In rqi (line 5) 
+Warning: Matrix is singular, close to singular or badly scaled. Results may be inaccurate. RCOND = NaN. 
+> In rqi (line 5) 
+Warning: Matrix is singular, close to singular or badly scaled. Results may be inaccurate. RCOND = NaN. 
+> In rqi (line 5) 
+Warning: Matrix is singular, close to singular or badly scaled. Results may be inaccurate. RCOND = NaN. 
+> In rqi (line 5) 
+Warning: Matrix is singular, close to singular or badly scaled. Results may be inaccurate. RCOND = NaN. 
+> In rqi (line 5) 
+Warning: Matrix is singular, close to singular or badly scaled. Results may be inaccurate. RCOND = NaN. 
+> In rqi (line 5) 
+Warning: Matrix is singular, close to singular or badly scaled. Results may be inaccurate. RCOND = NaN. 
+> In rqi (line 5) 
+Warning: Matrix is singular, close to singular or badly scaled. Results may be inaccurate. RCOND = NaN. 
+> In rqi (line 5) 
+Warning: Matrix is singular, close to singular or badly scaled. Results may be inaccurate. RCOND = NaN. 
+> In rqi (line 5) 
+Warning: Matrix is singular, close to singular or badly scaled. Results may be inaccurate. RCOND = NaN. 
+> In rqi (line 5) 
+Warning: Matrix is singular, close to singular or badly scaled. Results may be inaccurate. RCOND = NaN. 
+> In rqi (line 5) 
+Warning: Matrix is singular, close to singular or badly scaled. Results may be inaccurate. RCOND = NaN. 
+> In rqi (line 5) 
+Warning: Matrix is singular, close to singular or badly scaled. Results may be inaccurate. RCOND = NaN. 
+> In rqi (line 5) 
+Warning: Matrix is singular, close to singular or badly scaled. Results may be inaccurate. RCOND = NaN. 
+> In rqi (line 5) 
+Warning: Matrix is singular, close to singular or badly scaled. Results may be inaccurate. RCOND = NaN. 
+> In rqi (line 5) 
+Warning: Matrix is singular, close to singular or badly scaled. Results may be inaccurate. RCOND = NaN. 
+> In rqi (line 5) 
+Warning: Matrix is singular, close to singular or badly scaled. Results may be inaccurate. RCOND = NaN. 
+> In rqi (line 5) 
+Warning: Matrix is singular, close to singular or badly scaled. Results may be inaccurate. RCOND = NaN. 
+> In rqi (line 5) 
+Warning: Matrix is singular, close to singular or badly scaled. Results may be inaccurate. RCOND = NaN. 
+> In rqi (line 5) 
+Warning: Matrix is singular, close to singular or badly scaled. Results may be inaccurate. RCOND = NaN. 
+> In rqi (line 5) 
+Warning: Matrix is singular, close to singular or badly scaled. Results may be inaccurate. RCOND = NaN. 
+> In rqi (line 5) 
+Warning: Matrix is singular, close to singular or badly scaled. Results may be inaccurate. RCOND = NaN. 
+> In rqi (line 5) 
+Warning: Matrix is singular, close to singular or badly scaled. Results may be inaccurate. RCOND = NaN. 
+> In rqi (line 5) 
+Warning: Matrix is singular, close to singular or badly scaled. Results may be inaccurate. RCOND = NaN. 
+> In rqi (line 5) 
+Warning: Matrix is singular, close to singular or badly scaled. Results may be inaccurate. RCOND = NaN. 
+> In rqi (line 5) 
+Warning: Matrix is singular, close to singular or badly scaled. Results may be inaccurate. RCOND = NaN. 
+> In rqi (line 5) 
+Warning: Matrix is singular, close to singular or badly scaled. Results may be inaccurate. RCOND = NaN. 
+> In rqi (line 5) 
+Warning: Matrix is singular, close to singular or badly scaled. Results may be inaccurate. RCOND = NaN. 
+> In rqi (line 5) 
+
+lambda =
+
+   NaN
+
+
+u =
+
+   NaN
+   NaN
+   NaN
+
+>> [lambda,u] = rqi(A1,[0; 0; 0],100)
+Warning: Matrix is singular, close to singular or badly scaled. Results may be inaccurate. RCOND = NaN. 
+> In rqi (line 5) 
+Warning: Matrix is singular, close to singular or badly scaled. Results may be inaccurate. RCOND = NaN. 
+> In rqi (line 5) 
+Warning: Matrix is singular, close to singular or badly scaled. Results may be inaccurate. RCOND = NaN. 
+> In rqi (line 5) 
+Warning: Matrix is singular, close to singular or badly scaled. Results may be inaccurate. RCOND = NaN. 
+> In rqi (line 5) 
+Warning: Matrix is singular, close to singular or badly scaled. Results may be inaccurate. RCOND = NaN. 
+> In rqi (line 5) 
+Warning: Matrix is singular, close to singular or badly scaled. Results may be inaccurate. RCOND = NaN. 
+> In rqi (line 5) 
+Warning: Matrix is singular, close to singular or badly scaled. Results may be inaccurate. RCOND = NaN. 
+> In rqi (line 5) 
+Warning: Matrix is singular, close to singular or badly scaled. Results may be inaccurate. RCOND = NaN. 
+> In rqi (line 5) 
+Warning: Matrix is singular, close to singular or badly scaled. Results may be inaccurate. RCOND = NaN. 
+> In rqi (line 5) 
+Warning: Matrix is singular, close to singular or badly scaled. Results may be inaccurate. RCOND = NaN. 
+> In rqi (line 5) 
+Warning: Matrix is singular, close to singular or badly scaled. Results may be inaccurate. RCOND = NaN. 
+> In rqi (line 5) 
+Warning: Matrix is singular, close to singular or badly scaled. Results may be inaccurate. RCOND = NaN. 
+> In rqi (line 5) 
+Warning: Matrix is singular, close to singular or badly scaled. Results may be inaccurate. RCOND = NaN. 
+> In rqi (line 5) 
+Warning: Matrix is singular, close to singular or badly scaled. Results may be inaccurate. RCOND = NaN. 
+> In rqi (line 5) 
+Warning: Matrix is singular, close to singular or badly scaled. Results may be inaccurate. RCOND = NaN. 
+> In rqi (line 5) 
+Warning: Matrix is singular, close to singular or badly scaled. Results may be inaccurate. RCOND = NaN. 
+> In rqi (line 5) 
+Warning: Matrix is singular, close to singular or badly scaled. Results may be inaccurate. RCOND = NaN. 
+> In rqi (line 5) 
+Warning: Matrix is singular, close to singular or badly scaled. Results may be inaccurate. RCOND = NaN. 
+> In rqi (line 5) 
+Warning: Matrix is singular, close to singular or badly scaled. Results may be inaccurate. RCOND = NaN. 
+> In rqi (line 5) 
+Warning: Matrix is singular, close to singular or badly scaled. Results may be inaccurate. RCOND = NaN. 
+> In rqi (line 5) 
+Warning: Matrix is singular, close to singular or badly scaled. Results may be inaccurate. RCOND = NaN. 
+> In rqi (line 5) 
+Warning: Matrix is singular, close to singular or badly scaled. Results may be inaccurate. RCOND = NaN. 
+> In rqi (line 5) 
+Warning: Matrix is singular, close to singular or badly scaled. Results may be inaccurate. RCOND = NaN. 
+> In rqi (line 5) 
+Warning: Matrix is singular, close to singular or badly scaled. Results may be inaccurate. RCOND = NaN. 
+> In rqi (line 5) 
+Warning: Matrix is singular, close to singular or badly scaled. Results may be inaccurate. RCOND = NaN. 
+> In rqi (line 5) 
+Warning: Matrix is singular, close to singular or badly scaled. Results may be inaccurate. RCOND = NaN. 
+> In rqi (line 5) 
+Warning: Matrix is singular, close to singular or badly scaled. Results may be inaccurate. RCOND = NaN. 
+> In rqi (line 5) 
+Warning: Matrix is singular, close to singular or badly scaled. Results may be inaccurate. RCOND = NaN. 
+> In rqi (line 5) 
+Warning: Matrix is singular, close to singular or badly scaled. Results may be inaccurate. RCOND = NaN. 
+> In rqi (line 5) 
+Warning: Matrix is singular, close to singular or badly scaled. Results may be inaccurate. RCOND = NaN. 
+> In rqi (line 5) 
+Warning: Matrix is singular, close to singular or badly scaled. Results may be inaccurate. RCOND = NaN. 
+> In rqi (line 5) 
+Warning: Matrix is singular, close to singular or badly scaled. Results may be inaccurate. RCOND = NaN. 
+> In rqi (line 5) 
+Warning: Matrix is singular, close to singular or badly scaled. Results may be inaccurate. RCOND = NaN. 
+> In rqi (line 5) 
+Warning: Matrix is singular, close to singular or badly scaled. Results may be inaccurate. RCOND = NaN. 
+> In rqi (line 5) 
+Warning: Matrix is singular, close to singular or badly scaled. Results may be inaccurate. RCOND = NaN. 
+> In rqi (line 5) 
+Warning: Matrix is singular, close to singular or badly scaled. Results may be inaccurate. RCOND = NaN. 
+> In rqi (line 5) 
+Warning: Matrix is singular, close to singular or badly scaled. Results may be inaccurate. RCOND = NaN. 
+> In rqi (line 5) 
+Warning: Matrix is singular, close to singular or badly scaled. Results may be inaccurate. RCOND = NaN. 
+> In rqi (line 5) 
+Warning: Matrix is singular, close to singular or badly scaled. Results may be inaccurate. RCOND = NaN. 
+> In rqi (line 5) 
+Warning: Matrix is singular, close to singular or badly scaled. Results may be inaccurate. RCOND = NaN. 
+> In rqi (line 5) 
+Warning: Matrix is singular, close to singular or badly scaled. Results may be inaccurate. RCOND = NaN. 
+> In rqi (line 5) 
+Warning: Matrix is singular, close to singular or badly scaled. Results may be inaccurate. RCOND = NaN. 
+> In rqi (line 5) 
+Warning: Matrix is singular, close to singular or badly scaled. Results may be inaccurate. RCOND = NaN. 
+> In rqi (line 5) 
+Warning: Matrix is singular, close to singular or badly scaled. Results may be inaccurate. RCOND = NaN. 
+> In rqi (line 5) 
+Warning: Matrix is singular, close to singular or badly scaled. Results may be inaccurate. RCOND = NaN. 
+> In rqi (line 5) 
+Warning: Matrix is singular, close to singular or badly scaled. Results may be inaccurate. RCOND = NaN. 
+> In rqi (line 5) 
+Warning: Matrix is singular, close to singular or badly scaled. Results may be inaccurate. RCOND = NaN. 
+> In rqi (line 5) 
+Warning: Matrix is singular, close to singular or badly scaled. Results may be inaccurate. RCOND = NaN. 
+> In rqi (line 5) 
+Warning: Matrix is singular, close to singular or badly scaled. Results may be inaccurate. RCOND = NaN. 
+> In rqi (line 5) 
+Warning: Matrix is singular, close to singular or badly scaled. Results may be inaccurate. RCOND = NaN. 
+> In rqi (line 5) 
+Warning: Matrix is singular, close to singular or badly scaled. Results may be inaccurate. RCOND = NaN. 
+> In rqi (line 5) 
+Warning: Matrix is singular, close to singular or badly scaled. Results may be inaccurate. RCOND = NaN. 
+> In rqi (line 5) 
+Warning: Matrix is singular, close to singular or badly scaled. Results may be inaccurate. RCOND = NaN. 
+> In rqi (line 5) 
+Warning: Matrix is singular, close to singular or badly scaled. Results may be inaccurate. RCOND = NaN. 
+> In rqi (line 5) 
+Warning: Matrix is singular, close to singular or badly scaled. Results may be inaccurate. RCOND = NaN. 
+> In rqi (line 5) 
+Warning: Matrix is singular, close to singular or badly scaled. Results may be inaccurate. RCOND = NaN. 
+> In rqi (line 5) 
+Warning: Matrix is singular, close to singular or badly scaled. Results may be inaccurate. RCOND = NaN. 
+> In rqi (line 5) 
+Warning: Matrix is singular, close to singular or badly scaled. Results may be inaccurate. RCOND = NaN. 
+> In rqi (line 5) 
+Warning: Matrix is singular, close to singular or badly scaled. Results may be inaccurate. RCOND = NaN. 
+> In rqi (line 5) 
+Warning: Matrix is singular, close to singular or badly scaled. Results may be inaccurate. RCOND = NaN. 
+> In rqi (line 5) 
+Warning: Matrix is singular, close to singular or badly scaled. Results may be inaccurate. RCOND = NaN. 
+> In rqi (line 5) 
+Warning: Matrix is singular, close to singular or badly scaled. Results may be inaccurate. RCOND = NaN. 
+> In rqi (line 5) 
+Warning: Matrix is singular, close to singular or badly scaled. Results may be inaccurate. RCOND = NaN. 
+> In rqi (line 5) 
+Warning: Matrix is singular, close to singular or badly scaled. Results may be inaccurate. RCOND = NaN. 
+> In rqi (line 5) 
+Warning: Matrix is singular, close to singular or badly scaled. Results may be inaccurate. RCOND = NaN. 
+> In rqi (line 5) 
+Warning: Matrix is singular, close to singular or badly scaled. Results may be inaccurate. RCOND = NaN. 
+> In rqi (line 5) 
+Warning: Matrix is singular, close to singular or badly scaled. Results may be inaccurate. RCOND = NaN. 
+> In rqi (line 5) 
+Warning: Matrix is singular, close to singular or badly scaled. Results may be inaccurate. RCOND = NaN. 
+> In rqi (line 5) 
+Warning: Matrix is singular, close to singular or badly scaled. Results may be inaccurate. RCOND = NaN. 
+> In rqi (line 5) 
+Warning: Matrix is singular, close to singular or badly scaled. Results may be inaccurate. RCOND = NaN. 
+> In rqi (line 5) 
+Warning: Matrix is singular, close to singular or badly scaled. Results may be inaccurate. RCOND = NaN. 
+> In rqi (line 5) 
+Warning: Matrix is singular, close to singular or badly scaled. Results may be inaccurate. RCOND = NaN. 
+> In rqi (line 5) 
+Warning: Matrix is singular, close to singular or badly scaled. Results may be inaccurate. RCOND = NaN. 
+> In rqi (line 5) 
+Warning: Matrix is singular, close to singular or badly scaled. Results may be inaccurate. RCOND = NaN. 
+> In rqi (line 5) 
+Warning: Matrix is singular, close to singular or badly scaled. Results may be inaccurate. RCOND = NaN. 
+> In rqi (line 5) 
+Warning: Matrix is singular, close to singular or badly scaled. Results may be inaccurate. RCOND = NaN. 
+> In rqi (line 5) 
+Warning: Matrix is singular, close to singular or badly scaled. Results may be inaccurate. RCOND = NaN. 
+> In rqi (line 5) 
+Warning: Matrix is singular, close to singular or badly scaled. Results may be inaccurate. RCOND = NaN. 
+> In rqi (line 5) 
+Warning: Matrix is singular, close to singular or badly scaled. Results may be inaccurate. RCOND = NaN. 
+> In rqi (line 5) 
+Warning: Matrix is singular, close to singular or badly scaled. Results may be inaccurate. RCOND = NaN. 
+> In rqi (line 5) 
+Warning: Matrix is singular, close to singular or badly scaled. Results may be inaccurate. RCOND = NaN. 
+> In rqi (line 5) 
+Warning: Matrix is singular, close to singular or badly scaled. Results may be inaccurate. RCOND = NaN. 
+> In rqi (line 5) 
+Warning: Matrix is singular, close to singular or badly scaled. Results may be inaccurate. RCOND = NaN. 
+> In rqi (line 5) 
+Warning: Matrix is singular, close to singular or badly scaled. Results may be inaccurate. RCOND = NaN. 
+> In rqi (line 5) 
+Warning: Matrix is singular, close to singular or badly scaled. Results may be inaccurate. RCOND = NaN. 
+> In rqi (line 5) 
+Warning: Matrix is singular, close to singular or badly scaled. Results may be inaccurate. RCOND = NaN. 
+> In rqi (line 5) 
+Warning: Matrix is singular, close to singular or badly scaled. Results may be inaccurate. RCOND = NaN. 
+> In rqi (line 5) 
+Warning: Matrix is singular, close to singular or badly scaled. Results may be inaccurate. RCOND = NaN. 
+> In rqi (line 5) 
+Warning: Matrix is singular, close to singular or badly scaled. Results may be inaccurate. RCOND = NaN. 
+> In rqi (line 5) 
+Warning: Matrix is singular, close to singular or badly scaled. Results may be inaccurate. RCOND = NaN. 
+> In rqi (line 5) 
+Warning: Matrix is singular, close to singular or badly scaled. Results may be inaccurate. RCOND = NaN. 
+> In rqi (line 5) 
+Warning: Matrix is singular, close to singular or badly scaled. Results may be inaccurate. RCOND = NaN. 
+> In rqi (line 5) 
+Warning: Matrix is singular, close to singular or badly scaled. Results may be inaccurate. RCOND = NaN. 
+> In rqi (line 5) 
+Warning: Matrix is singular, close to singular or badly scaled. Results may be inaccurate. RCOND = NaN. 
+> In rqi (line 5) 
+Warning: Matrix is singular, close to singular or badly scaled. Results may be inaccurate. RCOND = NaN. 
+> In rqi (line 5) 
+Warning: Matrix is singular, close to singular or badly scaled. Results may be inaccurate. RCOND = NaN. 
+> In rqi (line 5) 
+Warning: Matrix is singular, close to singular or badly scaled. Results may be inaccurate. RCOND = NaN. 
+> In rqi (line 5) 
+Warning: Matrix is singular, close to singular or badly scaled. Results may be inaccurate. RCOND = NaN. 
+> In rqi (line 5) 
+Warning: Matrix is singular, close to singular or badly scaled. Results may be inaccurate. RCOND = NaN. 
+> In rqi (line 5) 
+Warning: Matrix is singular, close to singular or badly scaled. Results may be inaccurate. RCOND = NaN. 
+> In rqi (line 5) 
+
+lambda =
+
+   NaN
+
+
+u =
+
+   NaN
+   NaN
+   NaN
+
+>> [lambda,u] = rqi(A1,[1; 1; 1],100)
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =  1.387779e-17. 
+> In rqi (line 5) 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =  2.467162e-17. 
+> In rqi (line 5) 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =  1.696174e-17. 
+> In rqi (line 5) 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =  1.696174e-17. 
+> In rqi (line 5) 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =  1.541976e-17. 
+> In rqi (line 5) 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =  7.709882e-18. 
+> In rqi (line 5) 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =  7.709882e-18. 
+> In rqi (line 5) 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =  7.709882e-18. 
+> In rqi (line 5) 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =  1.079383e-17. 
+> In rqi (line 5) 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =  7.709882e-18. 
+> In rqi (line 5) 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =  1.387779e-17. 
+> In rqi (line 5) 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =  2.621360e-17. 
+> In rqi (line 5) 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =  2.158767e-17. 
+> In rqi (line 5) 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =  1.387779e-17. 
+> In rqi (line 5) 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =  2.621360e-17. 
+> In rqi (line 5) 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =  2.158767e-17. 
+> In rqi (line 5) 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =  1.387779e-17. 
+> In rqi (line 5) 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =  2.621360e-17. 
+> In rqi (line 5) 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =  2.158767e-17. 
+> In rqi (line 5) 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =  1.387779e-17. 
+> In rqi (line 5) 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =  2.621360e-17. 
+> In rqi (line 5) 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =  2.158767e-17. 
+> In rqi (line 5) 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =  1.387779e-17. 
+> In rqi (line 5) 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =  2.621360e-17. 
+> In rqi (line 5) 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =  2.158767e-17. 
+> In rqi (line 5) 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =  1.387779e-17. 
+> In rqi (line 5) 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =  2.621360e-17. 
+> In rqi (line 5) 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =  2.158767e-17. 
+> In rqi (line 5) 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =  1.387779e-17. 
+> In rqi (line 5) 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =  2.621360e-17. 
+> In rqi (line 5) 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =  2.158767e-17. 
+> In rqi (line 5) 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =  1.387779e-17. 
+> In rqi (line 5) 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =  2.621360e-17. 
+> In rqi (line 5) 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =  2.158767e-17. 
+> In rqi (line 5) 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =  1.387779e-17. 
+> In rqi (line 5) 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =  2.621360e-17. 
+> In rqi (line 5) 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =  2.158767e-17. 
+> In rqi (line 5) 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =  1.387779e-17. 
+> In rqi (line 5) 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =  2.621360e-17. 
+> In rqi (line 5) 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =  2.158767e-17. 
+> In rqi (line 5) 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =  1.387779e-17. 
+> In rqi (line 5) 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =  2.621360e-17. 
+> In rqi (line 5) 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =  2.158767e-17. 
+> In rqi (line 5) 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =  1.387779e-17. 
+> In rqi (line 5) 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =  2.621360e-17. 
+> In rqi (line 5) 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =  2.158767e-17. 
+> In rqi (line 5) 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =  1.387779e-17. 
+> In rqi (line 5) 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =  2.621360e-17. 
+> In rqi (line 5) 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =  2.158767e-17. 
+> In rqi (line 5) 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =  1.387779e-17. 
+> In rqi (line 5) 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =  2.621360e-17. 
+> In rqi (line 5) 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =  2.158767e-17. 
+> In rqi (line 5) 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =  1.387779e-17. 
+> In rqi (line 5) 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =  2.621360e-17. 
+> In rqi (line 5) 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =  2.158767e-17. 
+> In rqi (line 5) 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =  1.387779e-17. 
+> In rqi (line 5) 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =  2.621360e-17. 
+> In rqi (line 5) 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =  2.158767e-17. 
+> In rqi (line 5) 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =  1.387779e-17. 
+> In rqi (line 5) 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =  2.621360e-17. 
+> In rqi (line 5) 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =  2.158767e-17. 
+> In rqi (line 5) 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =  1.387779e-17. 
+> In rqi (line 5) 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =  2.621360e-17. 
+> In rqi (line 5) 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =  2.158767e-17. 
+> In rqi (line 5) 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =  1.387779e-17. 
+> In rqi (line 5) 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =  2.621360e-17. 
+> In rqi (line 5) 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =  2.158767e-17. 
+> In rqi (line 5) 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =  1.387779e-17. 
+> In rqi (line 5) 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =  2.621360e-17. 
+> In rqi (line 5) 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =  2.158767e-17. 
+> In rqi (line 5) 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =  1.387779e-17. 
+> In rqi (line 5) 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =  2.621360e-17. 
+> In rqi (line 5) 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =  2.158767e-17. 
+> In rqi (line 5) 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =  1.387779e-17. 
+> In rqi (line 5) 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =  2.621360e-17. 
+> In rqi (line 5) 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =  2.158767e-17. 
+> In rqi (line 5) 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =  1.387779e-17. 
+> In rqi (line 5) 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =  2.621360e-17. 
+> In rqi (line 5) 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =  2.158767e-17. 
+> In rqi (line 5) 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =  1.387779e-17. 
+> In rqi (line 5) 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =  2.621360e-17. 
+> In rqi (line 5) 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =  2.158767e-17. 
+> In rqi (line 5) 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =  1.387779e-17. 
+> In rqi (line 5) 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =  2.621360e-17. 
+> In rqi (line 5) 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =  2.158767e-17. 
+> In rqi (line 5) 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =  1.387779e-17. 
+> In rqi (line 5) 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =  2.621360e-17. 
+> In rqi (line 5) 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =  2.158767e-17. 
+> In rqi (line 5) 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =  1.387779e-17. 
+> In rqi (line 5) 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =  2.621360e-17. 
+> In rqi (line 5) 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =  2.158767e-17. 
+> In rqi (line 5) 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =  1.387779e-17. 
+> In rqi (line 5) 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =  2.621360e-17. 
+> In rqi (line 5) 
+
+lambda =
+
+    1.0000
+
+
+u =
+
+    0.8165
+    0.4082
+    0.4082
+
+>> [lambda,u] = rqi(A1,[1; 1; 2],100)
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =  2.621360e-17. 
+> In rqi (line 5) 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =  7.709882e-18. 
+> In rqi (line 5) 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =  1.079383e-17. 
+> In rqi (line 5) 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =  7.709882e-18. 
+> In rqi (line 5) 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =  1.387779e-17. 
+> In rqi (line 5) 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =  2.621360e-17. 
+> In rqi (line 5) 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =  2.158767e-17. 
+> In rqi (line 5) 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =  1.387779e-17. 
+> In rqi (line 5) 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =  2.621360e-17. 
+> In rqi (line 5) 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =  2.158767e-17. 
+> In rqi (line 5) 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =  1.387779e-17. 
+> In rqi (line 5) 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =  2.621360e-17. 
+> In rqi (line 5) 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =  2.158767e-17. 
+> In rqi (line 5) 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =  1.387779e-17. 
+> In rqi (line 5) 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =  2.621360e-17. 
+> In rqi (line 5) 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =  2.158767e-17. 
+> In rqi (line 5) 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =  1.387779e-17. 
+> In rqi (line 5) 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =  2.621360e-17. 
+> In rqi (line 5) 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =  2.158767e-17. 
+> In rqi (line 5) 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =  1.387779e-17. 
+> In rqi (line 5) 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =  2.621360e-17. 
+> In rqi (line 5) 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =  2.158767e-17. 
+> In rqi (line 5) 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =  1.387779e-17. 
+> In rqi (line 5) 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =  2.621360e-17. 
+> In rqi (line 5) 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =  2.158767e-17. 
+> In rqi (line 5) 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =  1.387779e-17. 
+> In rqi (line 5) 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =  2.621360e-17. 
+> In rqi (line 5) 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =  2.158767e-17. 
+> In rqi (line 5) 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =  1.387779e-17. 
+> In rqi (line 5) 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =  2.621360e-17. 
+> In rqi (line 5) 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =  2.158767e-17. 
+> In rqi (line 5) 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =  1.387779e-17. 
+> In rqi (line 5) 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =  2.621360e-17. 
+> In rqi (line 5) 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =  2.158767e-17. 
+> In rqi (line 5) 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =  1.387779e-17. 
+> In rqi (line 5) 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =  2.621360e-17. 
+> In rqi (line 5) 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =  2.158767e-17. 
+> In rqi (line 5) 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =  1.387779e-17. 
+> In rqi (line 5) 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =  2.621360e-17. 
+> In rqi (line 5) 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =  2.158767e-17. 
+> In rqi (line 5) 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =  1.387779e-17. 
+> In rqi (line 5) 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =  2.621360e-17. 
+> In rqi (line 5) 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =  2.158767e-17. 
+> In rqi (line 5) 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =  1.387779e-17. 
+> In rqi (line 5) 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =  2.621360e-17. 
+> In rqi (line 5) 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =  2.158767e-17. 
+> In rqi (line 5) 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =  1.387779e-17. 
+> In rqi (line 5) 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =  2.621360e-17. 
+> In rqi (line 5) 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =  2.158767e-17. 
+> In rqi (line 5) 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =  1.387779e-17. 
+> In rqi (line 5) 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =  2.621360e-17. 
+> In rqi (line 5) 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =  2.158767e-17. 
+> In rqi (line 5) 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =  1.387779e-17. 
+> In rqi (line 5) 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =  2.621360e-17. 
+> In rqi (line 5) 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =  2.158767e-17. 
+> In rqi (line 5) 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =  1.387779e-17. 
+> In rqi (line 5) 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =  2.621360e-17. 
+> In rqi (line 5) 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =  2.158767e-17. 
+> In rqi (line 5) 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =  1.387779e-17. 
+> In rqi (line 5) 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =  2.621360e-17. 
+> In rqi (line 5) 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =  2.158767e-17. 
+> In rqi (line 5) 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =  1.387779e-17. 
+> In rqi (line 5) 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =  2.621360e-17. 
+> In rqi (line 5) 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =  2.158767e-17. 
+> In rqi (line 5) 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =  1.387779e-17. 
+> In rqi (line 5) 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =  2.621360e-17. 
+> In rqi (line 5) 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =  2.158767e-17. 
+> In rqi (line 5) 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =  1.387779e-17. 
+> In rqi (line 5) 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =  2.621360e-17. 
+> In rqi (line 5) 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =  2.158767e-17. 
+> In rqi (line 5) 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =  1.387779e-17. 
+> In rqi (line 5) 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =  2.621360e-17. 
+> In rqi (line 5) 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =  2.158767e-17. 
+> In rqi (line 5) 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =  1.387779e-17. 
+> In rqi (line 5) 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =  2.621360e-17. 
+> In rqi (line 5) 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =  2.158767e-17. 
+> In rqi (line 5) 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =  1.387779e-17. 
+> In rqi (line 5) 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =  2.621360e-17. 
+> In rqi (line 5) 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =  2.158767e-17. 
+> In rqi (line 5) 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =  1.387779e-17. 
+> In rqi (line 5) 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =  2.621360e-17. 
+> In rqi (line 5) 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =  2.158767e-17. 
+> In rqi (line 5) 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =  1.387779e-17. 
+> In rqi (line 5) 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =  2.621360e-17. 
+> In rqi (line 5) 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =  2.158767e-17. 
+> In rqi (line 5) 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =  1.387779e-17. 
+> In rqi (line 5) 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =  2.621360e-17. 
+> In rqi (line 5) 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =  2.158767e-17. 
+> In rqi (line 5) 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =  1.387779e-17. 
+> In rqi (line 5) 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =  2.621360e-17. 
+> In rqi (line 5) 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =  2.158767e-17. 
+> In rqi (line 5) 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =  1.387779e-17. 
+> In rqi (line 5) 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =  2.621360e-17. 
+> In rqi (line 5) 
+
+lambda =
+
+    1.0000
+
+
+u =
+
+    0.8165
+    0.4082
+    0.4082
+
+>> lambda = nsi(A1,10)
+
+lambda =
+
+    4.0380
+    2.9621
+    0.9999
+
+>> lambda = nsi(A1,30)
+
+lambda =
+
+    4.0001
+    2.9999
+    1.0000
+
+>> lambda = nsi(A1,40)
+
+lambda =
+
+    4.0000
+    3.0000
+    1.0000
+
+>> A2=[3 1 -2;4 1 1;-3 0 3]
+
+A2 =
+
+     3     1    -2
+     4     1     1
+    -3     0     3
+
+>> lambda = unshiftedqr(A2,20)
+
+lambda =
+
+    5.7742
+    2.1794
+   -0.9536
+
+>> [V,D]=eig(A2)
+
+V =
+
+   -0.6271   -0.3649    0.1330
+   -0.3833    0.8889    0.8636
+    0.6781   -0.2769    0.4864
+
+
+D =
+
+    5.7742         0         0
+         0   -0.9536         0
+         0         0    2.1794
+
+>> lambda = shiftedqr(A2)
+
+lambda =
+
+   -0.9536
+    5.7742
+    2.1794
+
+>> A3=[1 2 4;1 3 3;0 0 1];
+>> [U,S,V]=svd(A3)
+
+U =
+
+   -0.7208   -0.5417    0.4324
+   -0.6813    0.6684   -0.2984
+   -0.1274   -0.5097   -0.8509
+
+
+S =
+
+    6.2980         0         0
+         0    1.1474         0
+         0         0    0.1384
+
+
+V =
+
+   -0.2226    0.1105    0.9686
+   -0.5534    0.8036   -0.2189
+   -0.8026   -0.5848   -0.1178
+
+>> r = rank(A3)
+
+r =
+
+     3
+
+>> A1=U(:,1)*S(1,1)*V(:,1)'
+=
+
+A1 =
+
+    1.0107    2.5125    3.6436
+    0.9552    2.3746    3.4436
+    0.1787    0.4442    0.6441
+
+ =
+ |
+Error: The expression to the left of the equals sign is not a valid target for an assignment.
+ 
+>> A1=U(:,1)*S(1,1)*V(:,1)'
+
+A1 =
+
+    1.0107    2.5125    3.6436
+    0.9552    2.3746    3.4436
+    0.1787    0.4442    0.6441
+
+>> rank(A1)
+
+ans =
+
+     1
+
+>> A1=U(:,1:2)*S(1:2,1:2)*V(:,1:2)'
+
+A1 =
+
+    0.9420    2.0131    4.0070
+    1.0400    2.9910    2.9951
+    0.1141   -0.0258    0.9861
+
+>> rank(A1)
+
+ans =
+
+     2
+
+>> A4 = [1 2 2 1; 2 3 1 1; 4 5 6 3]
+
+A4 =
+
+     1     2     2     1
+     2     3     1     1
+     4     5     6     3
+
+>> [U,S,V]=svd(A4)
+
+U =
+
+   -0.3015    0.0474    0.9523
+   -0.3416   -0.9378   -0.0614
+   -0.8902    0.3438   -0.2989
+
+
+S =
+
+   10.3971         0         0         0
+         0    1.6469         0         0
+         0         0    0.4331         0
+
+
+V =
+
+   -0.4372   -0.2751   -0.8456   -0.1348
+   -0.5846   -0.6069    0.5212   -0.1348
+   -0.6046    0.7407    0.1146   -0.2697
+   -0.3187    0.0856   -0.0136    0.9439
+
+>> A1=U(:,1)*S(1,1)*V(:,1)'
+
+A1 =
+
+    1.3702    1.8325    1.8949    0.9989
+    1.5527    2.0764    2.1471    1.1319
+    4.0463    5.4111    5.5954    2.9498
+
+>> rank(A1)
+
+ans =
+
+     1
+
+>> A1=U(:,1:2)*S(1:2,1:2)*V(:,1:2)'
+
+A1 =
+
+    1.3488    1.7850    1.9527    1.0056
+    1.9775    3.0139    1.0030    0.9996
+    3.8905    5.0675    6.0148    2.9982
+
+>> rank(A1)
+
+ans =
+
+     2
+
+>> 

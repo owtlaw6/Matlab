@@ -1,0 +1,315 @@
+>> f=@(x) x^6-11*x^3+17*x^2-7*x+1;
+>> xmin=gss(f,0,1,10)
+
+xmin =
+
+    0.2827
+
+>> f=@(x) x^6-11*x^3+17*x^2-7*x+1;
+>> xmin=spi(f,0,0.7,1,10)
+
+xmin =
+
+    0.2836
+
+>> f=@(x) x^6-11*x^3+17*x^2-7*x+1;
+>> xmin=fminbnd(f,0,1)
+
+xmin =
+
+    0.2836
+
+>> f=@(x) 5*x(1)^4+4*x(1)^2*x(2)-x(1)*x(2)^3+4*x(2)^4-x(1);
+>> xmin=fminsearch(f,[1;1])
+
+xmin =
+
+    0.4923
+   -0.3643
+
+>> f=@(x,y) 5*x^4+4*x^2*y-x*y^3+4*y^4-x;
+>> ezmesh(f, [-1 1])
+Warning: Function failed to evaluate on array inputs; vectorizing the function may speed up its evaluation
+and avoid the need to loop over array elements. 
+> In ezplotfeval (line 56)
+  In ezgraph3>ezeval (line 635)
+  In ezgraph3>surfplot (line 547)
+  In ezgraph3 (line 48)
+  In ezmesh (line 65) 
+>> ezsurf(f, [-1 1])
+Warning: Function failed to evaluate on array inputs; vectorizing the function may speed up its evaluation
+and avoid the need to loop over array elements. 
+> In ezplotfeval (line 56)
+  In ezgraph3>ezeval (line 635)
+  In ezgraph3>surfplot (line 547)
+  In ezgraph3 (line 48)
+  In ezsurf (line 64) 
+>> figure
+>> ezmesh(f, [-1 1])
+Warning: Function failed to evaluate on array inputs; vectorizing the function may speed up its evaluation
+and avoid the need to loop over array elements. 
+> In ezplotfeval (line 56)
+  In ezgraph3>ezeval (line 635)
+  In ezgraph3>surfplot (line 547)
+  In ezgraph3 (line 48)
+  In ezmesh (line 65) 
+>> f1=@(x,y) 3*x^4+4*x^3-24*x^2+5;
+>> xmin=gss(f,0,1,10)
+Error using @(x,y)5*x^4+4*x^2*y-x*y^3+4*y^4-x
+Not enough input arguments.
+
+Error in gss (line 5)
+f1=f(x1);
+ 
+>> xmin=gss(f1,0,1,10)
+
+xmin =
+
+    0.9959
+
+>> fminbnd(f,0,1)
+Error using @(x,y)5*x^4+4*x^2*y-x*y^3+4*y^4-x
+Not enough input arguments.
+
+Error in fminbnd (line 215)
+x= xf; fx = funfcn(x,varargin{:});
+ 
+>> fminbnd(f1,0,1)
+
+ans =
+
+    0.9999
+
+>> ezplot(f)
+Warning: Function failed to evaluate on array inputs; vectorizing the function may speed up its evaluation
+and avoid the need to loop over array elements. 
+> In ezplotfeval (line 56)
+  In ezplot>ezimplicit (line 257)
+  In ezplot (line 153) 
+>> ezplot(f1)
+Warning: Function failed to evaluate on array inputs; vectorizing the function may speed up its evaluation
+and avoid the need to loop over array elements. 
+> In ezplotfeval (line 56)
+  In ezplot>ezimplicit (line 257)
+  In ezplot (line 153) 
+>> xmin=gss(f1,-4,-3,10)
+
+xmin =
+
+   -3.0041
+
+>> fminbnd(f1,-4,-3)
+
+ans =
+
+   -3.0001
+
+>> xmin=gss(f1,-1,0,10)
+
+xmin =
+
+   -0.9959
+
+>> fminbnd(f1,-1,0)
+
+ans =
+
+   -0.9999
+
+>> fminbnd(f1,-3.5,-2.5)
+
+ans =
+
+   -2.5616
+
+>> xmin=gss(f1,-3.5,-2.5,10)
+
+xmin =
+
+   -2.5598
+
+>> xmin=gss(f1,-3.5,-2.5,15)
+
+xmin =
+
+   -2.5616
+
+>> fminbnd(f1,1,2)
+
+ans =
+
+    1.5616
+
+>> xmin=gss(f1,1,2,15)
+
+xmin =
+
+    1.5615
+
+>> xmin=gss(f1,1,2,16)
+
+xmin =
+
+    1.5616
+
+>> xmin=spi(f,1,0.7,2,10)
+Error using @(x,y)5*x^4+4*x^2*y-x*y^3+4*y^4-x
+Not enough input arguments.
+
+Error in spi (line 5)
+fr=f(r);
+ 
+>> xmin=spi(f1,1,0.7,2,10)
+
+xmin =
+
+    1.5616
+
+>> xmin=spi(f1,-3.5,0.7,-2.5,10)
+
+xmin =
+
+   -2.5596
+
+>> xmin=spi(f1,-3.5,0.7,-2.5,19)
+
+xmin =
+
+   NaN
+
+>> xmin=spi(f1,-3.5,0.7,-2.5,16)
+
+xmin =
+
+   -2.5616
+
+>> hess=@(x) [(-2*x(2).^2*exp(-x(1).^2*x(2).^2)+4*x(1).^2*x(2).^4*exp(-x(1).^2*x(2).^2)+2) (4*x(1).^3*x(2).^3*exp(-x(1).^2*x(2).^2)-4*x(1)*x(2)*exp(-x(1).^2*x(2).^2)) ; (4*x(1).^3*x(2).^3*exp(-x(1).^2*x(2).^2)-4*x(1)*
+x(2)*exp(-x(1).^2*x(2).^2)) (-2*x(2).^2*exp(-x(1).^2*x(2).^2)+4*x(1).^4*x(2).^2*exp(-x(1).^2*x(2).^2)+2)];
+ hess=@(x) [(-2*x(2).^2*exp(-x(1).^2*x(2).^2)+4*x(1).^2*x(2).^4*exp(-x(1).^2*x(2).^2)+2) (4*x(1).^3*x(2).^3*exp(-x(1).^2*x(2).^2)-4*x(1)*x(2)*exp(-x(1).^2*x(2).^2)) ; (4*x(1).^3*x(2).^3*exp(-x(1).^2*x(2).^2)-4*x(1)*
+                                                                                                                                                                                                                       |
+Error: Expression or statement is incorrect--possibly unbalanced (, {, or [.
+ 
+>> f=@(x) exp(-x(1)^2*x(2)^2)+(x(1)-1)^2+(x(2)-1)^2;
+>> hess=@(x) [(-2*x(2).^2*exp(-x(1).^2*x(2).^2)+4*x(1).^2*x(2).^4*exp(-x(1).^2*x(2).^2)+2) (4*x(1).^3*x(2).^3*exp(-x(1).^2*x(2).^2)-4*x(1)*x(2)*exp(-x(1).^2*x(2).^2)) ; (4*x(1).^3*x(2).^3*exp(-x(1).^2*x(2).^2)-4*x(1)*
+ hess=@(x) [(-2*x(2).^2*exp(-x(1).^2*x(2).^2)+4*x(1).^2*x(2).^4*exp(-x(1).^2*x(2).^2)+2) (4*x(1).^3*x(2).^3*exp(-x(1).^2*x(2).^2)-4*x(1)*x(2)*exp(-x(1).^2*x(2).^2)) ; (4*x(1).^3*x(2).^3*exp(-x(1).^2*x(2).^2)-4*x(1)*
+                                                                                                                                                                                                                       |
+Error: Expression or statement is incorrect--possibly unbalanced (, {, or [.
+ 
+>> hess=@(x) [(-2*x(2).^2*exp(-x(1).^2*x(2).^2)+4*x(1).^2*x(2).^4*exp(-x(1).^2*x(2).^2)+2) (4*x(1).^3*x(2).^3*exp(-x(1).^2*x(2).^2)-4*x(1)*x(2)*exp(-x(1).^2*x(2).^2)) ; (4*x(1).^3*x(2).^3*exp(-x(1).^2*x(2).^2)-4*x(1)*
+x(2)*exp(-x(1).^2*x(2).^2)) (-2*x(2).^2*exp(-x(1).^2*x(2).^2)+4*x(1).^4*x(2).^2*exp(-x(1).^2*x(2).^2)+2)];
+ hess=@(x) [(-2*x(2).^2*exp(-x(1).^2*x(2).^2)+4*x(1).^2*x(2).^4*exp(-x(1).^2*x(2).^2)+2) (4*x(1).^3*x(2).^3*exp(-x(1).^2*x(2).^2)-4*x(1)*x(2)*exp(-x(1).^2*x(2).^2)) ; (4*x(1).^3*x(2).^3*exp(-x(1).^2*x(2).^2)-4*x(1)*
+                                                                                                                                                                                                                       |
+Error: Expression or statement is incorrect--possibly unbalanced (, {, or [.
+ 
+>> hess=@(x) [(-2*x(2).^2*exp(-x(1).^2*x(2).^2)+4*x(1).^2*x(2).^4*exp(-x(1).^2*x(2).^2)+2) (4*x(1).^3*x(2).^3*exp(-x(1).^2*x(2).^2)-4*x(1)*x(2)*exp(-x(1).^2*x(2).^2)) ; (4*x(1).^3*x(2).^3*exp(-x(1).^2*x(2).^2)-4*x(1)*x(2)*exp(-x(1).^2*x(2).^2)) (-2*x(2).^2*exp(-x(1).^2*x(2).^2)+4*x(1).^4*x(2).^2*exp(-x(1).^2*x(2).^2)+2)];
+>> grad=@(x) [-2*x(1)*x(2).^2*exp(-x(1).^2*x(2).^2)+2*x(1)-2 ; -2*x(1).^2*x(2)*exp(-x(1).^2*x(2).^2)+2*x(2)-2];
+>> newtond([1;1],hessiana,grad,10)
+Undefined function or variable 'hessiana'.
+ 
+Did you mean:
+>> newtond([1;1],hess,grad,10)
+>> newtond([1;1],hess,grad,10)
+>> newtond([1 1],hess,grad,10)
+Error using  + 
+Matrix dimensions must agree.
+
+Error in newtond (line 4)
+x=x+v;
+ 
+>> xmin=newtond([1;1],hess,grad,10)
+Error in newtond (line 2)
+for i=1:k
+
+Output argument "xmin" (and maybe others) not assigned during call to "newtond".
+ 
+>> xmin=newtond([1;1],hess,grad,10)
+Error in newtond (line 2)
+for i=1:k
+
+Output argument "xmin" (and maybe others) not assigned during call to "newtond".
+ 
+>> newtond([1;1],hess,grad,10)
+
+ans =
+
+    1.2088
+    1.2088
+
+>> f=@(x) x(1)^4+x(2)^4+2*x(1)^2*x(2)^2+6*x(1)*x(2)-4*x(1)-4*x(2)+1;
+>> grad=@(x) [4*x(1).^3+4*x(1)*x(2).^2+6*x(2)-4 ; 4*x(1).^2*x(2)+6*x(1)+4*x(2).^3-4];
+>> hess=@(x) [(12*x(1).^2+4*x(2).^2),(8*x(1)*x(2)+6); (8*x(1)*x(2)+6), (4*x(1).^2+12*x(2).^2)];
+>> newton([1;-1],hess,grad,10)
+Undefined function or variable 'newton'.
+ 
+Did you mean:
+>> newtond([1;-1],hess,grad,10)
+
+ans =
+
+    1.1326
+   -0.4660
+
+>> fminsearch(f,[0;1])
+
+ans =
+
+   -0.4659
+    1.1326
+
+>> gradient(f,x,grad,10)
+Undefined function or variable 'x'.
+ 
+>> gradient(f,[0;1],grad,10)
+
+ans =
+
+   -0.4660
+    1.1326
+
+>> gradientconjugat([0;1],f,grad,10)
+
+ans =
+
+   NaN
+   NaN
+
+>> gradientconjugat([0;1],f,grad,5)
+
+ans =
+
+   -3.4019
+    1.2235
+
+>> gradientconjugat([0;1],f,grad,7)
+
+ans =
+
+   1.0e+45 *
+
+   -9.6637
+    0.7258
+
+>> gradientconjugat([0;1],f,grad,6)
+
+ans =
+
+   1.0e+05 *
+
+   -5.6573
+    0.4249
+
+>> gradientconjugat([-1;1],f,grad,10)
+
+ans =
+
+   -0.4660
+    1.1326
+
+>> gradientconjugat([-1;1],f,grad,10)
+
+ans =
+
+   -0.4660
+    1.1326
+
+>> 

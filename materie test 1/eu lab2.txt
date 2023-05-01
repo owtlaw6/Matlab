@@ -1,0 +1,651 @@
+>> f=@(x) x^3+x-1;
+>> xc=bisect(f,0,1,0.00005)
+
+xc =
+
+    0.6823
+
+>> g=@(x) (1+2*x^3)/(1+3*x^2);
+>> xc=fpi(g,0,10)
+
+xc =
+
+    0.6823
+
+>> df=@(x) 3*x^2+1;
+>> xc=newton(f,df,0,10)
+
+xc =
+
+    0.6823
+
+>> fzero(f,1)
+
+ans =
+
+    0.6823
+
+>> ezplot(2*x^3-6*x-1)
+Undefined function or variable 'x'.
+ 
+>> f=@(x)2*x^3-6*x-1
+
+f = 
+
+    @(x)2*x^3-6*x-1
+ 
+>> ezplot(f)
+
+>> ezplot(f,[-10,10,-1,1])
+Warning: Function failed to evaluate on array inputs; vectorizing the function may speed up its evaluation
+and avoid the need to loop over array elements. 
+> In ezplot1ezplot1 (line 488)
+  In ezplot (line 144) 
+>> ezplot(f,[-5,5,-1,1])
+Warning: Function failed to evaluate on array inputs; vectorizing the function may speed up its evaluation
+and avoid the need to loop over array elements. 
+> In ezplot1ezplot1 (line 488)
+  In ezplot (line 144) 
+>> ezplot(f,[-2,2,-1,1])
+Warning: Function failed to evaluate on array inputs; vectorizing the function may speed up its evaluation
+and avoid the need to loop over array elements. 
+> In ezplot1ezplot1 (line 488)
+  In ezplot (line 144) 
+>> xc=bisect(f,-2,-1,0.00005)
+
+xc =
+
+   -1.6418
+
+>> format long
+>> xc=bisect(f,-1,0,0.00005)
+
+xc =
+
+  -0.168243408203125
+
+>> xc=bisect(f,1,2,0.00005)
+
+xc =
+
+   1.810028076171875
+
+>> secant
+Error: File: secant.m Line: 2 Column: 18
+()-indexing must appear last in an index expression.
+ 
+>> secant
+Error: File: secant.m Line: 5 Column: 22
+()-indexing must appear last in an index expression.
+ 
+>> secant
+Error using secant (line 2)
+Not enough input arguments.
+ 
+>> f3 = @(x)x^5+x-1
+
+f3 = 
+
+    @(x)x^5+x-1
+
+>> fpi(f,0.8,10)
+
+ans =
+
+   NaN
+
+>> fpi(f3,0.8,10)
+
+ans =
+
+  -Inf
+
+>> fpi(f3,0.8,10)
+
+ans =
+
+  -Inf
+
+>> f3 = @(x)(-1)*x^5+1
+
+f3 = 
+
+    @(x)(-1)*x^5+1
+
+>> fpi(f3,0.8,10)
+
+ans =
+
+     1
+
+>> format long
+>> fpi(f3,0.8,10)
+
+ans =
+
+     1
+
+>> f3 = @(x)1-x^5
+
+f3 = 
+
+    @(x)1-x^5
+
+>> fpi(f3,0.8,10)
+
+ans =
+
+     1
+
+>> f3 = @(x)(1-x)^(1/5)
+
+f3 = 
+
+    @(x)(1-x)^(1/5)
+
+>> fpi(f3,0.8,10)
+
+ans =
+
+   0.755250803461252
+
+>> fzero(f3)
+Error using fzero (line 118)
+FZERO requires at least two input arguments or a structure with valid fields.
+ 
+>> fzero(f3,1)
+
+ans =
+
+     1
+
+>> f3 = @(x)x^5+x-1
+
+f3 = 
+
+    @(x)x^5+x-1
+
+>> fzero(f3,1)
+
+ans =
+
+   0.754877666246693
+
+>> f3 = @(x)(1-x)^(1/5)
+
+f3 = 
+
+    @(x)(1-x)^(1/5)
+
+>> fpi(f3,0.8,10)
+
+ans =
+
+   0.755250803461252
+
+>> f4=@(x)x^3-2*x-2
+
+f4 = 
+
+    @(x)x^3-2*x-2
+
+>> xc=newton(f,@(x)3*x*x-2,0,10)
+
+xc =
+
+   1.808235619562567
+
+>> xc=newton(f4,@(x)3*x*x-2,0,10)
+
+xc =
+
+     0
+
+>> ezplot(f4)
+Warning: Function failed to evaluate on array inputs; vectorizing the function may speed up its evaluation
+and avoid the need to loop over array elements. 
+> In ezplot1ezplot1 (line 488)
+  In ezplot (line 144) 
+>> ezplot(f4,[-2,2,-1,1])
+Warning: Function failed to evaluate on array inputs; vectorizing the function may speed up its evaluation
+and avoid the need to loop over array elements. 
+> In ezplot1ezplot1 (line 488)
+  In ezplot (line 144) 
+>> xc=newton(f4,@(x)3*x*x-2,2,10)
+
+xc =
+
+   1.769292354238631
+
+>> xc=newton(f4,@(x)3*x*x-2,1,10)
+
+xc =
+
+   1.769292354238631
+
+>> mfp(f4,1,2,10)
+Undefined function or variable 'fa'.
+
+Error in mfp (line 2)
+if sign(fa)*sign(fb) >= 0
+ 
+>> mfp(f4,1,2,10)
+
+c =
+
+   1.600000000000000
+
+
+c =
+
+   1.742268041237113
+
+
+c =
+
+   1.765259152996944
+
+
+c =
+
+   1.768696766124261
+
+
+c =
+
+   1.769204541530486
+
+
+c =
+
+   1.769279410264611
+
+
+c =
+
+   1.769290446306198
+
+
+c =
+
+   1.769292073012190
+
+
+c =
+
+   1.769292312786297
+
+
+c =
+
+   1.769292348128623
+
+
+ans =
+
+   1.884646174064312
+
+>> mfp(f4,1,2,10)
+
+ans =
+
+   1.884646174064312
+
+>> mfp(f4,1,2,10)
+
+ans =
+
+   1.769292348128623
+
+>> mfp(f4,1,2,10)
+
+ans =
+
+   1.769292353338026
+
+>> secant(f4,1,2,10)
+Attempted to access x(0); index must be a positive integer or logical.
+
+Error in secant (line 2)
+x(0)=x0;
+ 
+>> secant(f4,1,2,10)
+Attempted to access x(0); index must be a positive integer or logical.
+
+Error in secant (line 2)
+x(0)=x0;
+ 
+>> secant(f4,1,2,10)
+Attempted to access x(0); index must be a positive integer or logical.
+
+Error in secant (line 5)
+    x(i+1) = x(i) - (f(x(i))*(x(i)-x(i-1)))/(f(x(i))-f(x(i-1)));
+ 
+>> secant(f4,1,2,10)
+
+ans =
+
+   NaN
+
+>> secant(@(x)x*x*x+x-1,0,1,15)
+
+ans =
+
+   NaN
+
+>> secant(@(x)x*x*x+x-1,0,1,15)
+Attempted to access x(0); index must be a positive integer or logical.
+
+Error in secant (line 2)
+x(0) = x0;
+ 
+>> secant(@(x)x*x*x+x-1,0,1,15)
+
+ans =
+
+   NaN
+
+>> secant(@(x)x*x*x+x-1,0,1,15)
+
+x =
+
+                   0   1.000000000000000   0.500000000000000
+
+
+x =
+
+                   0   1.000000000000000   0.500000000000000   0.636363636363636
+
+
+x =
+
+                   0   1.000000000000000   0.500000000000000   0.636363636363636   0.690052356020942
+
+
+x =
+
+  Columns 1 through 5
+
+                   0   1.000000000000000   0.500000000000000   0.636363636363636   0.690052356020942
+
+  Column 6
+
+   0.682020419648186
+
+
+x =
+
+  Columns 1 through 5
+
+                   0   1.000000000000000   0.500000000000000   0.636363636363636   0.690052356020942
+
+  Columns 6 through 7
+
+   0.682020419648186   0.682325781409893
+
+
+x =
+
+  Columns 1 through 5
+
+                   0   1.000000000000000   0.500000000000000   0.636363636363636   0.690052356020942
+
+  Columns 6 through 8
+
+   0.682020419648186   0.682325781409893   0.682327804359026
+
+
+x =
+
+  Columns 1 through 5
+
+                   0   1.000000000000000   0.500000000000000   0.636363636363636   0.690052356020942
+
+  Columns 6 through 9
+
+   0.682020419648186   0.682325781409893   0.682327804359026   0.682327803828018
+
+
+x =
+
+  Columns 1 through 5
+
+                   0   1.000000000000000   0.500000000000000   0.636363636363636   0.690052356020942
+
+  Columns 6 through 10
+
+   0.682020419648186   0.682325781409893   0.682327804359026   0.682327803828018   0.682327803828019
+
+
+x =
+
+  Columns 1 through 5
+
+                   0   1.000000000000000   0.500000000000000   0.636363636363636   0.690052356020942
+
+  Columns 6 through 10
+
+   0.682020419648186   0.682325781409893   0.682327804359026   0.682327803828018   0.682327803828019
+
+  Column 11
+
+   0.682327803828019
+
+
+x =
+
+  Columns 1 through 5
+
+                   0   1.000000000000000   0.500000000000000   0.636363636363636   0.690052356020942
+
+  Columns 6 through 10
+
+   0.682020419648186   0.682325781409893   0.682327804359026   0.682327803828018   0.682327803828019
+
+  Columns 11 through 12
+
+   0.682327803828019                 NaN
+
+
+x =
+
+  Columns 1 through 5
+
+                   0   1.000000000000000   0.500000000000000   0.636363636363636   0.690052356020942
+
+  Columns 6 through 10
+
+   0.682020419648186   0.682325781409893   0.682327804359026   0.682327803828018   0.682327803828019
+
+  Columns 11 through 13
+
+   0.682327803828019                 NaN                 NaN
+
+
+x =
+
+  Columns 1 through 5
+
+                   0   1.000000000000000   0.500000000000000   0.636363636363636   0.690052356020942
+
+  Columns 6 through 10
+
+   0.682020419648186   0.682325781409893   0.682327804359026   0.682327803828018   0.682327803828019
+
+  Columns 11 through 14
+
+   0.682327803828019                 NaN                 NaN                 NaN
+
+
+x =
+
+  Columns 1 through 5
+
+                   0   1.000000000000000   0.500000000000000   0.636363636363636   0.690052356020942
+
+  Columns 6 through 10
+
+   0.682020419648186   0.682325781409893   0.682327804359026   0.682327803828018   0.682327803828019
+
+  Columns 11 through 15
+
+   0.682327803828019                 NaN                 NaN                 NaN                 NaN
+
+
+x =
+
+  Columns 1 through 5
+
+                   0   1.000000000000000   0.500000000000000   0.636363636363636   0.690052356020942
+
+  Columns 6 through 10
+
+   0.682020419648186   0.682325781409893   0.682327804359026   0.682327803828018   0.682327803828019
+
+  Columns 11 through 15
+
+   0.682327803828019                 NaN                 NaN                 NaN                 NaN
+
+  Column 16
+
+                 NaN
+
+
+ans =
+
+   NaN
+
+>> secant(@(x)x*x*x+x-1,0,1,10)
+
+x =
+
+                   0   1.000000000000000   0.500000000000000
+
+
+x =
+
+                   0   1.000000000000000   0.500000000000000   0.636363636363636
+
+
+x =
+
+                   0   1.000000000000000   0.500000000000000   0.636363636363636   0.690052356020942
+
+
+x =
+
+  Columns 1 through 5
+
+                   0   1.000000000000000   0.500000000000000   0.636363636363636   0.690052356020942
+
+  Column 6
+
+   0.682020419648186
+
+
+x =
+
+  Columns 1 through 5
+
+                   0   1.000000000000000   0.500000000000000   0.636363636363636   0.690052356020942
+
+  Columns 6 through 7
+
+   0.682020419648186   0.682325781409893
+
+
+x =
+
+  Columns 1 through 5
+
+                   0   1.000000000000000   0.500000000000000   0.636363636363636   0.690052356020942
+
+  Columns 6 through 8
+
+   0.682020419648186   0.682325781409893   0.682327804359026
+
+
+x =
+
+  Columns 1 through 5
+
+                   0   1.000000000000000   0.500000000000000   0.636363636363636   0.690052356020942
+
+  Columns 6 through 9
+
+   0.682020419648186   0.682325781409893   0.682327804359026   0.682327803828018
+
+
+x =
+
+  Columns 1 through 5
+
+                   0   1.000000000000000   0.500000000000000   0.636363636363636   0.690052356020942
+
+  Columns 6 through 10
+
+   0.682020419648186   0.682325781409893   0.682327804359026   0.682327803828018   0.682327803828019
+
+
+x =
+
+  Columns 1 through 5
+
+                   0   1.000000000000000   0.500000000000000   0.636363636363636   0.690052356020942
+
+  Columns 6 through 10
+
+   0.682020419648186   0.682325781409893   0.682327804359026   0.682327803828018   0.682327803828019
+
+  Column 11
+
+   0.682327803828019
+
+
+ans =
+
+   0.682327803828019
+
+>> secant(@(x)x*x*x+x-1,0,1,13)
+
+ans =
+
+   NaN
+
+>> secant(@(x)x*x*x+x-1,0,1,12)
+
+ans =
+
+   NaN
+
+>> secant(@(x)x*x*x+x-1,0,1,11)
+
+ans =
+
+   NaN
+
+>> secant(@(x)x*x*x+x-1,0,1,10)
+
+ans =
+
+   0.682327803828019
+
+>> secant(f4,0,1,10)
+
+ans =
+
+  -1.386213702690275
+
+>> secant(f4,1,2,10)
+
+ans =
+
+   NaN
+
+>> secant(f4,1,2,9)
+
+ans =
+
+   1.769292354238631
+
+>> 

@@ -1,0 +1,14 @@
+la 10
+exmultistepv si in loc de ab2step fol unstable2step
+
+la 11
+rungekutta inlocuesc trapezstep cu urungekutta
+unde e ab2step cu ab3step de acolo
+
+la 12
+predcorr ab2step inlocuiesc cu ab3step
+am1step inloc cu am2step
+
+la13
+predcorr ab2step inloc cu ab4step
+am1step inloc cu am3step

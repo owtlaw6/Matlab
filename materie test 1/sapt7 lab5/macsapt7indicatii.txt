@@ -1,0 +1,17 @@
+y5 = c1 + c2 * cos(2 * pi * t5) + c3 * sin(2*pi*t5)+c4*cos(4*pi*t5)
+
+A5=[t5.^0, cos(2*pi*t5), sin(2*pi*t5), cos(4*pi*t5)]
+
+c=(A5'*A5)\(A5'*y5)
+r=y5-A5*c
+
+
+
+
+
+
+
+A7=[t7.^0, t7];
+c7=(A7'*A7)\(A7'*log(y7))
+r=y7-exp(A7*c7)
+

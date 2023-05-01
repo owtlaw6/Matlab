@@ -1,0 +1,55 @@
+problema 10
+
+funtion x=gauss_newton(r,Dr,x0,n)
+x=x0;
+for k=1:n
+A=Dr(x);
+v=-(A'*A)\(A'*r(x));
+x=x+v;
+end
+>> r=@(x)[norm(x-[0;1])-1; norm(x-[1;1])-1; norm(x-[0;-1])-1];
+>> Dr = @(x)[(x-[0;1])/norm(x-[0;1]), (x-[1;1])/norm(x-[1;1]), (x-[0;-1])/norm(x-[0;-1])]';
+>> x = gauss_newton(r,Dr,[0;0],20)
+
+
+
+problema 11
+
+>> t0=[0.9120;0.9860;1.0600;1.1300;1.1900;1.2600;1.3200;1.3800;1.4100;1.4900];
+>> y0=[13.7;15.9;18.5;21.3;23.5;27.2;32.7;36.0;38.6;43.7];
+>> r = @(x)x(1)*t0.^x(2)-y0;
+>> Dr = @(x) [t0.^x(2), x(1)*t0.^x(2).*log(t0)];
+>> x = gauss_newton(r,Dr,[16;3],20);
+>> remp = norm(x(1)*t0.^x(2)-y0)/sqrt(length(t0));
+
+
+
+problema 12
+
+function x = levenberg_marquardt(r,Dr,lambda,x0,n)
+x=x0;
+for k=1:n
+A=Dr(x);
+v=-(A'*A+lambda*diag(diag(A'*A)))\(A'*r(x));
+x=x+v;
+end
+>> t0 = [0.9120;0.9860;1.0600;1.1300;1.1900;1.2600;1.3200;1.3800;1.4100;1.4900];
+>> y0=[13.7;15.9;18.5;21.3;23.5;27.2;32.7;36.0;38.6;43.7];
+>> r = @(x) x(1)*t0.^x(2)-y0;
+>> Dr = @(x) [t0.^x(2), x(1)*t0.^x(2).*log(t0)];
+>> x = levenberg_marquardt(r,Dr,1,[16;3],20);
+>> remp = norm(x(1)*t0.^x(2)-y0)/sqrt(length(t0));
+
+
+
+problema 13
+
+>> t0 = [1;2;4;5;6;8;9;11];
+>> y0 = [1;3;7;12;13;5;2;1];
+>> r = @(x) x(1)*exp(-x(2)*(t0-x(3)).^2)-y0;
+>> Dr = @(x)[exp(-x(2)*(t0-x(3)).^2), -x(1)*(t0-x(3)).^2.*exp(-x(2)*(t0-x(3)).^2), 2*x(1)*x(2)*exp(-x(2)*(t0-x(3)).^2)];
+>> x = levenberg_marquardt(r,Dr,1,[12.70;0.15;5.68],20);
+>> remp = norm(x(1)*exp(-x(2)*(t0-x(3)).^2)-y0)/sqrt(length(t0));
+>> t = 1:0.01:11;
+>> y = x(1)*exp(-x(2)*(t-x(3)).^2);
+>> plot(t0,y0,'o',t,y);
